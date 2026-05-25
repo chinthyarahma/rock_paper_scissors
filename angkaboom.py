@@ -1,28 +1,24 @@
 import random
 
-pilihan = {
-    1: "batu",
-    2: "gunting",
-    3: "kertas"
-}
+computer = random.randint(1, 100)
 
-player = int(input("1. Batu\n2. Gunting\n3. Kertas\nPilih: "))
+low = 1
+high = 100
 
-computer = random.randint(1, 3)
+main = True
 
-print("Komputer memilih:", pilihan[computer])
+while main:
 
-if pilihan[player] == pilihan[computer]:
-    print("Seri!")
-    
-elif pilihan[player] == "batu" and pilihan[computer] == "gunting":
-    print("Pemain menang!")
-    
-elif pilihan[player] == "gunting" and pilihan[computer] == "kertas":
-    print("Pemain menang!")
-    
-elif pilihan[player] == "kertas" and pilihan[computer] == "batu":
-    print("Pemain menang!")
-    
-else:
-    print("Komputer menang!")
+    player = int(input(f"Pilih angka dari {low}-{high}: "))
+
+    if player > computer:
+        print("Terlalu besar")
+        high = player
+
+    elif player < computer:
+        print("Terlalu kecil")
+        low = player
+
+    else:
+        print("BOOM! Tebakan benar")
+        main = False
