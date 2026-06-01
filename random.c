@@ -2,20 +2,15 @@
 
 int main() {
     FILE *fptr;
+    char c;
 
-    fptr = fopen("hello.txt", "w");
+    fptr = fopen("hello.txt", "r");
 
-    if (fptr == NULL) {
-        printf("File gagal dibuka!");
-        return 1;
+    while ((c = fgetc(fptr)) != EOF) {
+        printf("%c\n", c);
     }
 
-    fprintf(fptr, "Halo dunia!\n");
-    fprintf(fptr, "Ini ditulis dari program C.");
-
     fclose(fptr);
-
-    printf("File berhasil dibuat!");
 
     return 0;
 }
