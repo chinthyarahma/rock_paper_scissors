@@ -10,6 +10,10 @@ int main() {
 
     printf("%s", buffer);
 
+    fgets(buffer, 100, fptr);
+
+    printf("%s", buffer);
+
     fclose(fptr);
 
     return 0;
