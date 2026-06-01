@@ -6,13 +6,9 @@ int main() {
 
     fptr = fopen("hello.txt", "r");
 
-    fgets(buffer, 100, fptr);
-
-    printf("%s", buffer);
-
-    fgets(buffer, 100, fptr);
-
-    printf("%s", buffer);
+    while (fgets(buffer, 100, fptr) != NULL) {
+        printf("%s", buffer);
+    }
 
     fclose(fptr);
 
