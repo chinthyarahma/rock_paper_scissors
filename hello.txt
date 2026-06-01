@@ -1,2 +1,1 @@
-Halo dunia!
-Ini ditulis dari program C.
+21 Messi 99.5

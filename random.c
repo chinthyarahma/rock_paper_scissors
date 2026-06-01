@@ -2,15 +2,19 @@
 
 int main() {
     FILE *fptr;
-    char buffer[100];
 
-    fptr = fopen("hello.txt", "r");
+    fptr = fopen("hello.txt", "w");
 
-    while (fgets(buffer, 100, fptr) != NULL) {
-        printf("%s", buffer);
+    if (fptr == NULL) {
+        printf("File gagal dibuka!");
+        return 1;
     }
 
+    fprintf(fptr, "21 Messi 99.5\n");
+
     fclose(fptr);
+
+    printf("File berhasil dibuat!");
 
     return 0;
 }
