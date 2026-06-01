@@ -2,13 +2,13 @@
 
 int main() {
     FILE *fptr;
-    char c;
+    char buffer[100];
 
     fptr = fopen("hello.txt", "r");
 
-    while ((c = fgetc(fptr)) != EOF) {
-        printf("%c\n", c);
-    }
+    fgets(buffer, 100, fptr);
+
+    printf("%s", buffer);
 
     fclose(fptr);
 
