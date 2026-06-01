@@ -3,18 +3,19 @@
 int main() {
     FILE *fptr;
 
-    fptr = fopen("hello.txt", "w");
+    int umur;
+    char nama[20];
+    float nilai;
 
-    if (fptr == NULL) {
-        printf("File gagal dibuka!");
-        return 1;
-    }
+    fptr = fopen("hello.txt", "r");
 
-    fprintf(fptr, "21 Messi 99.5\n");
+    fscanf(fptr, "%d %s %f", &umur, nama, &nilai);
+
+    printf("Umur: %d\n", umur);
+    printf("Nama: %s\n", nama);
+    printf("Nilai: %.1f\n", nilai);
 
     fclose(fptr);
-
-    printf("File berhasil dibuat!");
 
     return 0;
 }
